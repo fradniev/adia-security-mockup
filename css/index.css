@@ -1,0 +1,161 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+.flex{
+	display: flex;
+}
+.flex-column{
+	flex-direction: column;
+}
+.container{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+.adia img{
+	width: 100%;
+}
+.header{
+	display: none;
+	width: 100%;
+	height: 10%;
+	position: relative;
+}
+.header h1{
+	margin:0 10%;
+	align-self: center;
+}
+.show-header{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center
+}
+.header-settings{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background: gray;
+}
+.main-screen{
+	height: 90%;
+	overflow: hidden;
+	flex-wrap: wrap;
+}
+.main-map,.main-tracking, .main-infrared, .main-settings{
+	height: 100%;
+	position: relative;
+	display: none;
+}
+.main-background{
+	display: flex;
+	transition: 0.5s left;
+}
+.background-settings{
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+}
+.background-settings h2{
+	margin:0 10%;
+	align-self: center;
+}
+.settings-block h2{
+	margin:0 15%;
+}
+.sections-block{
+	height: 3vh;
+	background: #274969;
+	width: 100%;
+	display: flex;
+	position: relative;
+}
+.android-button-container{
+	width: 20%;
+	margin:0 15%;
+	position: relative;
+	display: flex;
+}
+.android-button{
+	width: 20%;
+	height: 50%;
+	background: black;
+	border:none;
+	border-radius: 50%;
+	position: absolute;
+}
+.android-button-space{
+	width: 100%;
+	height: 100%;
+	background: gray;
+	position: relative;
+	align-content: center;
+	align-items: center;
+	border:none;
+	border-left:40px;
+	border-right:50%;
+}
+.android-button-space:before {
+    content:"";
+    position: absolute;
+    right: 100%;
+    top:0px;
+    width:0px;
+    height:0px;
+    border:none;
+    border-radius:50%;
+}
+
+.android-button-space:after {
+    content:"";
+    position: absolute;
+    left: 100%;
+    top:0px;
+    width:0px;
+    height:0px;
+    border:none;
+    border-radius:50%;
+}
+.settings-block{
+	height: 8vh;
+	display: flex;
+	align-self: center;
+	width: 100%;
+	justify-content: space-between;
+}
+.section-staff, .section-threshold, .section-behaviour{
+	width: 100%;
+	align-items: flex-start;
+}
+.users-block{
+	height: 100%;
+	flex:1;
+	width: 100%;
+	align-items: flex-start;
+}
+.right{
+	left:100%;
+}
+.left{
+	left:-100%;
+}
+.footer-bar{
+	width: 100%;
+	height: 10%;
+	background: #274969;
+	position: relative;
+}
+.selector{
+	width: 20%;
+	height: 100%;
+	position: absolute;
+	left:20%;
+	background: #ffffff66;
+	transition: 0.5s left;
+}
+.footer-block{
+	width: 20%;
+	height: 100%;
+}
