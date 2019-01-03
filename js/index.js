@@ -5,6 +5,7 @@ $(document).ready(function(){
 		$("."+oldBackground).removeClass('main-background');
 		$("."+oldBackground).addClass('left');
 		if (oldBackground=="main-settings") {
+			$(".main-screen").removeClass('settings');
 			$(".header").removeClass('show-header');
 			$("."+oldBackground).removeClass('background-settings');
 		}
@@ -16,6 +17,7 @@ $(document).ready(function(){
 			$("."+oldBackground).removeClass('right');
 		}
 		if ($(this).attr('id')=="settings") {
+			$(".main-screen").addClass('settings');
 			$("."+oldBackground).addClass('background-settings');
 			$(".header").addClass('show-header');	
 		}
