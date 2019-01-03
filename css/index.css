@@ -195,8 +195,11 @@ html,body{
 	width: 100%;
 	align-items: flex-start;
 }
-.section-threshold{
+.section-threshold, .section-behaviour{
 	margin-top: 1%;
+}
+.section-behaviour{
+	margin-top: 0.5%;
 }
 .users-block{
 	height: 100%;
