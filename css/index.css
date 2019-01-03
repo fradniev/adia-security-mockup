@@ -66,7 +66,7 @@ html,body{
 	margin:0 8%;
 	align-self: center;
 	font-weight: normal;
-	font-size: 4.75vw;
+	font-size: 4.9vw;
 }
 .show-header{
 	display: flex;
@@ -105,12 +105,12 @@ html,body{
 .background-settings h2{
 	margin:0 8.3%;
 	align-self: center;
-	font-size: 3.8vw;
+	font-size: 4.3vw;
     color: white;
     font-weight: normal;
 }
 .settings-block h2{
-	font-size: 4.6vw;
+	font-size: 4.9vw;
     color: black;
     font-weight: normal;
 }
