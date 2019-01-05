@@ -189,7 +189,6 @@ html,body{
 }
 .button-check:checked + label:before{
 	left:45%;
-	background:#276dd8;
 }
 .section-staff, .section-threshold, .section-behaviour{
 	width: 100%;
