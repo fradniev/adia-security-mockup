@@ -130,17 +130,26 @@ html,body{
 	align-self: center;
 	width: 100%;
 	justify-content: space-between;
+	position: relative;
+}
+.separator{
+	position: absolute;
+	margin:0 2%;
+	width: 96%;
+	height: 0.1vh;
+	background: #e7c9e9;
+	top:100%;
 }
 .next-to-user{
-	margin-left:9%;
-	width: 7%;
+	margin-left:8%;
+	width: 8%;
 	margin-right:3%;
 	align-items: center;
 }
-.add-user{
+.add-user, .user{
 	justify-content: unset;
 }
-.add-user .next-to-img{
+.add-user .next-to-img, .user .next-to-img{
 	margin:0;
 }
 .threshold-name{
