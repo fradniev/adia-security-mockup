@@ -57,10 +57,10 @@ html,body{
 	object-fit: cover;
 }
 .header{
-	display: none;
 	width: 100%;
 	height: 9.4%;
-	position: relative;
+	position: absolute;
+	left:100%;
 }
 .header h1{
 	margin:0 8%;
@@ -72,7 +72,8 @@ html,body{
 	display: flex;
 	align-content: center;
 	justify-content: center;
-	align-items: center
+	align-items: center;
+	left:0;
 }
 .header-settings{
 	display: flex;
@@ -84,23 +85,24 @@ html,body{
 	height: 92%;
 	overflow: hidden;
 	flex-wrap: wrap;
-}
-.settings{
-	height: 82%;
+	position: relative;
 }
 .main-map,.main-tracking, .main-infrared, .main-settings{
 	height: 100%;
-	position: relative;
-	display: none;
+	position: absolute;
+	transition: 0.5s left;
+	left:0;
+	width: 100vw;
 }
 .main-background{
 	display: flex;
-	transition: 0.5s left;
+
 }
 .background-settings{
 	height: 90%;
 	display: flex;
 	flex-direction: column;
+	margin-top: 20.5%;
 }
 .background-settings h2{
 	margin:0 8.3%;
@@ -138,7 +140,7 @@ html,body{
 	width: 96%;
 	height: 0.1vh;
 	background: #e7c9e9;
-	top:100%;
+	top:95%;
 }
 .next-to-user{
 	margin-left:8%;
@@ -169,7 +171,7 @@ html,body{
 }
 .android-button-space{
 	width: 90%;
-	height: 50%;
+	height: 45%;
 	background: gray;
 	position: relative;
 	align-content: center;
