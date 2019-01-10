@@ -25,6 +25,9 @@
 *{
 	font-family: 'myriadpro-regular', Arial, sans-serif;
 }
+body>div:not(.container){
+	height: 0% !important;
+}
 html,body{
 	width: 100%;
 	height: 100%;
@@ -50,7 +53,8 @@ html,body{
 	width: 100%;
 	height: 100vh;
 	position: relative;
-	opacity: 0.4;
+	overflow: hidden;
+	/*opacity: 0.4;*/
 }
 .adia img{
 	width: 100%;
@@ -90,9 +94,15 @@ html,body{
 .main-map,.main-tracking, .main-infrared, .main-settings{
 	height: 100%;
 	position: absolute;
-	transition: 0.5s left;
+	transition: 0.2s left;
 	left:0;
 	width: 100vw;
+}
+.main-settings{
+	height: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20.5%;
 }
 .main-background{
 	display: flex;
@@ -104,7 +114,7 @@ html,body{
 	flex-direction: column;
 	margin-top: 20.5%;
 }
-.background-settings h2{
+.main-settings h2{
 	margin:0 8.3%;
 	align-self: center;
 	font-size: 4.3vw;
@@ -140,7 +150,10 @@ html,body{
 	width: 96%;
 	height: 0.1vh;
 	background: #e7c9e9;
-	top:95%;
+	top:92%;
+	z-index: 5;
+	max-height: 1px;
+    min-height: 1px;
 }
 .next-to-user{
 	margin-left:8%;

@@ -1,0 +1,10 @@
+# Node
+security/npm-debug.log
+security/node_modules
+
+# Cordova
+security/platforms
+security/plugins
+
+# res
+security/resources/signing
