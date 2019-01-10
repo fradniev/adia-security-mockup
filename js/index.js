@@ -1,20 +1,24 @@
 $(document).ready(function(){
 	var oldBackground="main-map";
+	var buttonIdList=["schedule-bottom","map","tracking","infrared","settings"];
+	var backgroundIdList=["background-schedule-bottom","background-map","background-tracking","background-infrared","background-settings"];
 	$(".footer-block").click(function(event) {
-		if ($(this).attr('id')!=$("."+oldBackground).attr('id')) {
-			$(".selector").css("left",$(this).data("percentage")+"%");
+		var newBackground = $(this);
+		var newBackgroundId=newBackground.attr('id');
+		if (newBackgroundId!=$("."+oldBackground).attr('id')) {
+			$(".selector").css("left",newBackground.data("percentage")+"%");
 			$("."+oldBackground).removeClass('main-background');
-			for (var i = parseInt($(this).attr("data-positionButton"))-1; i >= 0; i--) {
-				if ($('*[data-position="'+i+'"]').hasClass('right')) {
-					$('*[data-position="'+i+'"]').removeClass('right');
+			for (var i = parseInt(newBackground.attr("data-positionButton"))-1; i >= 0; i--) {
+				if ($('#'+backgroundIdList[i]).hasClass('right')) {
+					$('#'+backgroundIdList[i]).removeClass('right');
 				}
-				$('*[data-position="'+i+'"]').addClass('left');
+				$('#'+backgroundIdList[i]).addClass('left');
 			}
-			for (var i = parseInt($(this).attr("data-positionButton"))+1; i <= 5; i++) {
-				if ($('*[data-position="'+i+'"]').hasClass('left')) {
-					$('*[data-position="'+i+'"]').removeClass('left');
+			for (var i = parseInt(newBackground.attr("data-positionButton"))+1; i <= 4; i++) {
+				if ($('#'+backgroundIdList[i]).hasClass('left')) {
+					$('#'+backgroundIdList[i]).removeClass('left');
 				}
-				$('*[data-position="'+i+'"]').addClass('right');
+				$('#'+backgroundIdList[i]).addClass('right');
 			} 
 			/*if ($(this).data("position")<$("."+oldBackground).data("position")) {
 				$("."+oldBackground).addClass('right');
@@ -26,11 +30,11 @@ $(document).ready(function(){
 				$(".header").removeClass('show-header');
 				$("."+oldBackground).removeClass('background-settings');
 			}
-			oldBackground="main-"+$(this).attr('id');
+			oldBackground="main-"+newBackgroundId;
 			$("."+oldBackground).addClass('main-background');
 			$("."+oldBackground).removeClass('left');
 			$("."+oldBackground).removeClass('right');
-			if ($(this).attr('id')=="settings") {
+			if (newBackgroundId=="settings") {
 				$(".main-screen").addClass('settings');
 				$("."+oldBackground).addClass('background-settings');
 				$(".header").addClass('show-header');	

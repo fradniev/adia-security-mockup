@@ -94,7 +94,7 @@ html,body{
 .main-map,.main-tracking, .main-infrared, .main-settings{
 	height: 100%;
 	position: absolute;
-	transition: 0.2s left;
+	transition: 100ms transform;
 	left:0;
 	width: 100vw;
 }
@@ -231,10 +231,14 @@ html,body{
 	align-items: flex-start;
 }
 .right{
-	left:100%;
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	transform: translateX(100%);
 }
 .left{
-	left:-100%;
+	-webkit-transform: translateX(-100%);
+	-moz-transform: translateX(-100%);
+	transform: translateX(-100%);
 }
 .footer-bar{
 	width: 100%;

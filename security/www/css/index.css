@@ -1,115 +1,268 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+@font-face {
+   font-family: myriadpro-regular;
+   src: url(../fonts/MyriadPro-Regular.otf);
 }
 
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+@font-face {
+   font-family: myriadpro-semibold;
+   src: url(../fonts/Myriad-Pro-Semibold_31650.ttf);
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+@font-face {
+   font-family: myriadpro-semibold-italic;
+   src: url(../fonts/MyriadPro-LightIt.otf);
 }
 
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
+@font-face {
+   font-family: myriadpro-bold;
+   src: url(../fonts/Myriad-Pro-Bold_31631.ttf);
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+@font-face {
+   font-family: myriadpro-light;
+   src: url(../fonts/MyriadPro-Light.otf);
 }
+*{
+	font-family: 'myriadpro-regular', Arial, sans-serif;
+}
+body>div:not(.container){
+	height: 0% !important;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+.mockup{
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.mockup img{
+	object-fit: contain;
+	width: 100%;
+}
+.flex{
+	display: flex;
+}
+.flex-column{
+	flex-direction: column;
+}
+.container{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	/*opacity: 0.4;*/
+}
+.adia img{
+	width: 100%;
+	object-fit: cover;
+}
+.header{
+	width: 100%;
+	height: 9.4%;
+	position: absolute;
+	left:100%;
+}
+.header h1{
+	margin:0 8%;
+	align-self: center;
+	font-weight: normal;
+	font-size: 4.9vw;
+}
+.show-header{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	left:0;
+}
+.header-settings{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background: white;
+}
+.main-screen{
+	height: 92%;
+	overflow: hidden;
+	flex-wrap: wrap;
+	position: relative;
+}
+.main-map,.main-tracking, .main-infrared, .main-settings{
+	height: 100%;
+	position: absolute;
+	transition: 100ms transform;
+	left:0;
+	width: 100vw;
+}
+.main-settings{
+	height: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20.5%;
+}
+.main-background{
+	display: flex;
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
 }
-
-.event.listening {
-    background-color:#333333;
-    display:block;
+.background-settings{
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 20.5%;
 }
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
+.main-settings h2{
+	margin:0 8.3%;
+	align-self: center;
+	font-size: 4.3vw;
+    color: white;
+    font-weight: normal;
 }
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+.settings-block h2{
+	font-size: 4.9vw;
+    color: black;
+    font-weight: normal;
 }
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+.settings-block h2:not(.next-to-img){
+	margin-left:19%;
 }
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+.sections-block{
+	height: 3.8vh;
+	background: #274969;
+	width: 100%;
+	display: flex;
+	position: relative;
+}
+.settings-block{
+	height: 7.6vh;
+	display: flex;
+	align-self: center;
+	width: 100%;
+	justify-content: space-between;
+	position: relative;
+}
+.separator{
+	position: absolute;
+	margin:0 2%;
+	width: 96%;
+	height: 0.1vh;
+	background: #e7c9e9;
+	top:92%;
+	z-index: 5;
+	max-height: 1px;
+    min-height: 1px;
+}
+.next-to-user{
+	margin-left:8%;
+	width: 8%;
+	margin-right:3%;
+	align-items: center;
+}
+.add-user, .user{
+	justify-content: unset;
+}
+.add-user .next-to-img, .user .next-to-img{
+	margin:0;
+}
+.threshold-name{
+	background:#3b70a2;
+}
+.behaviour-name{
+	background:#0b75d7;
+}
+.android-button-container{
+	width: 15%;
+	margin:0 10%;
+	position: relative;
+	display: flex;
+}
+.button-check{
+	display: none;
+}
+.android-button-space{
+	width: 90%;
+	height: 45%;
+	background: gray;
+	position: relative;
+	align-content: center;
+	align-items: center;
+	border:none;
+	align-self: center;
+    background: #999;
+    border-radius: 60px;
+    transition: all 250ms ease;
+}
+.android-button-space:before{
+	width: 55%;
+	height: 100%;
+	border:none;
+	border-radius: 50%;
+	content: "";
+    position: absolute;
+    background: #fff;
+    box-shadow: 2px 2px 15px #555;
+    transition: all 300ms ease-in-out;
+    top:-2%;
+ 	left:1%;
+}
+.button-check:checked + label{
+	background:#96b9f1;
+}
+.button-check:checked + label:before{
+	left:45%;
+}
+.section-staff, .section-threshold, .section-behaviour{
+	width: 100%;
+	align-items: flex-start;
+}
+.section-threshold, .section-behaviour{
+	margin-top: 1%;
+}
+.section-behaviour{
+	margin-top: 0.5%;
+}
+.users-block{
+	height: 100%;
+	flex:1;
+	width: 100%;
+	align-items: flex-start;
+}
+.right{
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	transform: translateX(100%);
+}
+.left{
+	-webkit-transform: translateX(-100%);
+	-moz-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+.footer-bar{
+	width: 100%;
+	height: 8.5%;
+	background: #274969;
+	position: relative;
+}
+.selector{
+	width: 20%;
+	height: 100%;
+	position: absolute;
+	left:20%;
+	background: #ffffff66;
+	transition: 0.5s left;
+}
+.footer-block{
+	width: 20%;
+	height: 80%;
+	position: relative;
+}
+.footer-block-img{
+	width: 96%;
+}
+.footer-block img{
+	position: relative;
+	left:3%;
 }

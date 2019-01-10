@@ -2,11 +2,11 @@
 <html>
 <head>
 	<title>Adia Tech Security</title>
-	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,user-scalable=no">
-
+	<meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
 	<div class="container adia flex flex-column">
@@ -16,19 +16,19 @@
 			</div>
 		</div>
 		<div class="main-screen">
-			<!--<div class="main-schedule">
-				<img src="">
-			</div>-->
-			<div data-position="2" class="flex main-map main-background">
+			<div id="background-schedule-bottom" data-position="0" class="flex main-schedule left">
+				<!--<img src="">-->
+			</div>
+			<div id="background-map" data-position="1" class="flex main-map main-background">
 				<img alt="adia-tech-drone-map" src="images/map.png">
 			</div>
-			<div data-position="3" class="flex main-tracking right">
+			<div id="background-tracking" data-position="2" class="flex main-tracking right">
 				<img alt="adia-tech-drone-tracking-system" src="images/tracking.png">
 			</div>
-			<div data-position="4" class="flex main-infrared right">
+			<div id="background-infrared" data-position="3" class="flex main-infrared right">
 				<img alt="adia-tech-drone-infrared-system" src="images/infrared.png">
 			</div>
-			<div data-position="5" class="flex main-settings right">
+			<div id="background-settings" data-position="4" class="flex main-settings right">
 				<div class="section-staff flex flex-column">
 					<div class="sections-block staff-name">
 						<h2>Staff</h2>
@@ -100,27 +100,27 @@
 		</div>
 		<div class="footer-bar flex">
 			<div class="selector"></div>
-			<div id="schedule-bottom" data-percentage="0" class="footer-block flex" data-positionButton="1">
+			<div id="schedule-bottom" data-percentage="0" class="footer-block flex" data-positionButton="0">
 				<div class="footer-block-img flex">
 					<img src="images/schedule.png">
 				</div>
 			</div>
-			<div id="map" data-percentage="20" class="footer-block flex" data-positionButton="2">
+			<div id="map" data-percentage="20" class="footer-block flex" data-positionButton="1">
 				<div class="footer-block-img flex">
 					<img src="images/map-bottom.png">
 				</div>
 			</div>
-			<div id="tracking" data-percentage="40" class="footer-block flex" data-positionButton="3">
+			<div id="tracking" data-percentage="40" class="footer-block flex" data-positionButton="2">
 				<div class="footer-block-img flex">
 					<img src="images/aperture.png">
 				</div>
 			</div>
-			<div id="infrared" data-percentage="60" class="footer-block flex" data-positionButton="4">
+			<div id="infrared" data-percentage="60" class="footer-block flex" data-positionButton="3">
 				<div class="footer-block-img flex">
 					<img src="images/preview.png">
 				</div>
 			</div>
-			<div id="settings" data-percentage="80" class="footer-block flex" data-positionButton="5">
+			<div id="settings" data-percentage="80" class="footer-block flex" data-positionButton="4">
 				<div class="footer-block-img flex">
 					<img src="images/settings.png">
 				</div>
@@ -128,5 +128,8 @@
 		</div>
 		<!-- Fradniev Gonzalez -->
 	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

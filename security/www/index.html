@@ -1,49 +1,135 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+<head>
+	<title>Adia Tech Security</title>
+	<meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="container adia flex flex-column">
+		<div class="header">
+			<div class="header-settings">
+				<h1>Intruder Detection Settings</h1>
+			</div>
+		</div>
+		<div class="main-screen">
+			<div id="background-schedule-bottom" data-position="0" class="flex main-schedule left">
+				<!--<img src="">-->
+			</div>
+			<div id="background-map" data-position="1" class="flex main-map main-background">
+				<img alt="adia-tech-drone-map" src="images/map.png">
+			</div>
+			<div id="background-tracking" data-position="2" class="flex main-tracking right">
+				<img alt="adia-tech-drone-tracking-system" src="images/tracking.png">
+			</div>
+			<div id="background-infrared" data-position="3" class="flex main-infrared right">
+				<img alt="adia-tech-drone-infrared-system" src="images/infrared.png">
+			</div>
+			<div id="background-settings" data-position="4" class="flex main-settings right">
+				<div class="section-staff flex flex-column">
+					<div class="sections-block staff-name">
+						<h2>Staff</h2>
+					</div>
+					<div class="users-block">
+						<div class="settings-block user">
+							<div class="next-to-user flex">
+								<img src="images/thomas-icon.png">
+							</div>
+							<h2 class="next-to-img">Thomas</h2>
+							<div class="separator"></div>
+						</div>
+						<div class="settings-block user">
+							<div class="next-to-user flex">
+								<img src="images/anna-icon.png">
+							</div>
+							<h2 class="next-to-img">Anna</h2>
+							<div class="separator"></div>
+						</div>
+						<div class="settings-block user">
+							<div class="next-to-user flex">
+								<img src="images/jessica-icon.png">
+							</div>
+							<h2 class="next-to-img">Jessica</h2>
+							<div class="separator"></div>
+						</div>
+						<div class="settings-block add-user">
+							<div class="next-to-user flex">
+								<img src="images/add.png">
+							</div>
+							<h2 class="next-to-img">Add</h2>
+						</div>
+					</div>
+				</div>
+				<div class="section-threshold flex flex-column">
+					<div class="sections-block threshold-name">
+						<h2>Detection Threshold</h2>
+					</div>
+					<div class="settings-block auto">
+						<h2>Auto-Aim</h2>
+						<div class="android-button-container flex">
+							<input class="button-check" type="checkbox" id="auto-aim-button">
+							<label for="auto-aim-button" class="android-button-space flex"></label>
+						</div>
+							<div class="separator"></div>
+					</div>
+					<div class="settings-block auto">
+						<h2>Auto-Follow</h2>
+						<div class="android-button-container flex">
+							<input class="button-check" type="checkbox" id="auto-follow-button">
+							<label for="auto-follow-button" class="android-button-space flex"></label>
+						</div>
+					</div>
+				</div>
+				<div class="section-behaviour flex flex-column">
+					<div class="sections-block behaviour-name">
+						<h2>Behaviour</h2>
+					</div>
+					<div class="settings-block observation">
+						<h2>Observation Time</h2>
+						<div class="android-button-container flex">
+							<input class="button-check" type="checkbox" id="observation-button">
+							<label for="observation-button" class="android-button-space flex"></label>
+						</div>
+						<div class="separator"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bar flex">
+			<div class="selector"></div>
+			<div id="schedule-bottom" data-percentage="0" class="footer-block flex" data-positionButton="0">
+				<div class="footer-block-img flex">
+					<img src="images/schedule.png">
+				</div>
+			</div>
+			<div id="map" data-percentage="20" class="footer-block flex" data-positionButton="1">
+				<div class="footer-block-img flex">
+					<img src="images/map-bottom.png">
+				</div>
+			</div>
+			<div id="tracking" data-percentage="40" class="footer-block flex" data-positionButton="2">
+				<div class="footer-block-img flex">
+					<img src="images/aperture.png">
+				</div>
+			</div>
+			<div id="infrared" data-percentage="60" class="footer-block flex" data-positionButton="3">
+				<div class="footer-block-img flex">
+					<img src="images/preview.png">
+				</div>
+			</div>
+			<div id="settings" data-percentage="80" class="footer-block flex" data-positionButton="4">
+				<div class="footer-block-img flex">
+					<img src="images/settings.png">
+				</div>
+			</div>
+		</div>
+		<!-- Fradniev Gonzalez -->
+	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
 </html>

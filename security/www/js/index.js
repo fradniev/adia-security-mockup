@@ -1,46 +1,44 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
-
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
-    onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
-};
-
-app.initialize();
+$(document).ready(function(){
+	var oldBackground="main-map";
+	var buttonIdList=["schedule-bottom","map","tracking","infrared","settings"];
+	var backgroundIdList=["background-schedule-bottom","background-map","background-tracking","background-infrared","background-settings"];
+	$(".footer-block").click(function(event) {
+		var newBackground = $(this);
+		var newBackgroundId=newBackground.attr('id');
+		if (newBackgroundId!=$("."+oldBackground).attr('id')) {
+			$(".selector").css("left",newBackground.data("percentage")+"%");
+			$("."+oldBackground).removeClass('main-background');
+			for (var i = parseInt(newBackground.attr("data-positionButton"))-1; i >= 0; i--) {
+				if ($('#'+backgroundIdList[i]).hasClass('right')) {
+					$('#'+backgroundIdList[i]).removeClass('right');
+				}
+				$('#'+backgroundIdList[i]).addClass('left');
+			}
+			for (var i = parseInt(newBackground.attr("data-positionButton"))+1; i <= 4; i++) {
+				if ($('#'+backgroundIdList[i]).hasClass('left')) {
+					$('#'+backgroundIdList[i]).removeClass('left');
+				}
+				$('#'+backgroundIdList[i]).addClass('right');
+			} 
+			/*if ($(this).data("position")<$("."+oldBackground).data("position")) {
+				$("."+oldBackground).addClass('right');
+			} else {
+				$("."+oldBackground).addClass('left');
+			}*/
+			if (oldBackground=="main-settings") {
+				$(".main-screen").removeClass('settings');
+				$(".header").removeClass('show-header');
+				$("."+oldBackground).removeClass('background-settings');
+			}
+			oldBackground="main-"+newBackgroundId;
+			$("."+oldBackground).addClass('main-background');
+			$("."+oldBackground).removeClass('left');
+			$("."+oldBackground).removeClass('right');
+			if (newBackgroundId=="settings") {
+				$(".main-screen").addClass('settings');
+				$("."+oldBackground).addClass('background-settings');
+				$(".header").addClass('show-header');	
+			}
+		}
+	});
+});
