@@ -18,6 +18,9 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <preference name="AndroidLaunchMode" value="singleInstance" />
+        <preference name="DisallowOverscroll" value="true" />
+        <preference name="KeepRunning" value="true" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -25,5 +28,6 @@
     </platform>
     <preference name="Fullscreen" value="true" />
     <plugin name="cordova-plugin-fullscreen" spec="1.2.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <engine name="android" spec="^7.1.4" />
 </widget>
