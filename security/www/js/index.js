@@ -18,21 +18,24 @@ $(document).ready(function(){
 		    console.log(value);
 		}
 		setTimeout(function(){
-            AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_FULLSCREEN
-                    , successFunction, errorFunction
-            );
-            AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    , successFunction, errorFunction
-            );
-		    AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                    , successFunction, errorFunction
-            );
-			// Extend your app underneath the status bar (Android 4.4+ only)
-		    AndroidFullScreen.showUnderStatusBar();
-
-		    // Extend your app underneath the system UI (Android 4.4+ only)
-		    AndroidFullScreen.showUnderSystemUI();
-		}, 2000);
+			/*if (window.AndroidFullScreen) { 
+				window.AndroidFullScreen.immersiveMode(); 
+				AndroidFullScreen.immersiveMode(successFunction, errorFunction);
+			}*/
+			if (window.AndroidFullScreen) {
+			    AndroidFullScreen.setSystemUiVisibility(
+			    			AndroidFullScreen.SYSTEM_UI_FLAG_LAYOUT_STABLE
+							| AndroidFullScreen.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+							| AndroidFullScreen.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+							| AndroidFullScreen.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+							| AndroidFullScreen.SYSTEM_UI_FLAG_FULLSCREEN
+							| AndroidFullScreen.SYSTEM_UI_FLAG_IMMERSIVE
+	                    , successFunction, errorFunction
+	            );
+				AndroidFullScreen.showUnderStatusBar();
+				AndroidFullScreen.showUnderSystemUI();
+			}
+		}, 5000);
 		$(".footer-block").click(function(event) {
 			var newBackground = $(this);
 			var newBackgroundId=newBackground.attr('id');
