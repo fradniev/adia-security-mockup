@@ -3,14 +3,36 @@ $(document).ready(function(){
 		var oldBackground="main-map";
 		var buttonIdList=["schedule-bottom","map","tracking","infrared","settings"];
 		var backgroundIdList=["background-schedule-bottom","background-map","background-tracking","background-infrared","background-settings"];
-		// Extend your app underneath the status bar (Android 4.4+ only)
-	    AndroidFullScreen.showUnderStatusBar();
+		function successFunction()
+		{
+		    console.info("It worked!");
+		}
+		 
+		function errorFunction(error)
+		{
+		    console.error(error);
+		}
+		 
+		function trace(value)
+		{
+		    console.log(value);
+		}
+		setTimeout(function(){
+            AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_FULLSCREEN
+                    , successFunction, errorFunction
+            );
+            AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    , successFunction, errorFunction
+            );
+		    AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    , successFunction, errorFunction
+            );
+			// Extend your app underneath the status bar (Android 4.4+ only)
+		    AndroidFullScreen.showUnderStatusBar();
 
-	    // Extend your app underneath the system UI (Android 4.4+ only)
-	    AndroidFullScreen.showUnderSystemUI();
-
-	    // Hide system UI and keep it hidden (Android 4.4+ only)
-	    AndroidFullScreen.immersiveMode();
+		    // Extend your app underneath the system UI (Android 4.4+ only)
+		    AndroidFullScreen.showUnderSystemUI();
+		}, 2000);
 		$(".footer-block").click(function(event) {
 			var newBackground = $(this);
 			var newBackgroundId=newBackground.attr('id');
