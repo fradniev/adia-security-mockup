@@ -18,11 +18,12 @@ $(document).ready(function(){
 		    console.log(value);
 		}
 		setTimeout(function(){
-			/*if (window.AndroidFullScreen) { 
-				window.AndroidFullScreen.immersiveMode(); 
+			if (window.AndroidFullScreen) { 
 				AndroidFullScreen.immersiveMode(successFunction, errorFunction);
-			}*/
-			if (window.AndroidFullScreen) {
+				AndroidFullScreen.showUnderStatusBar();
+				AndroidFullScreen.showUnderSystemUI();
+			}
+			/*if (window.AndroidFullScreen) {
 			    AndroidFullScreen.setSystemUiVisibility(
 			    			AndroidFullScreen.SYSTEM_UI_FLAG_LAYOUT_STABLE
 							| AndroidFullScreen.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -30,12 +31,11 @@ $(document).ready(function(){
 							| AndroidFullScreen.SYSTEM_UI_FLAG_HIDE_NAVIGATION
 							| AndroidFullScreen.SYSTEM_UI_FLAG_FULLSCREEN
 							| AndroidFullScreen.SYSTEM_UI_FLAG_IMMERSIVE
+							| AndroidFullScreen.FLAG_LAYOUT_NO_LIMITS
 	                    , successFunction, errorFunction
 	            );
-				AndroidFullScreen.showUnderStatusBar();
-				AndroidFullScreen.showUnderSystemUI();
-			}
-		}, 5000);
+			}*/
+		}, 0);
 		$(".footer-block").click(function(event) {
 			var newBackground = $(this);
 			var newBackgroundId=newBackground.attr('id');
