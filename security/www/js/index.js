@@ -18,29 +18,59 @@ $(document).ready(function(){
 		    console.log(value);
 		}
 		setTimeout(function(){
-			if (window.AndroidFullScreen) { 
-				AndroidFullScreen.immersiveMode(successFunction, errorFunction);
-				AndroidFullScreen.showUnderStatusBar();
-				AndroidFullScreen.showUnderSystemUI();
-			}
-			/*if (window.AndroidFullScreen) {
-			    AndroidFullScreen.setSystemUiVisibility(
-			    			AndroidFullScreen.SYSTEM_UI_FLAG_LAYOUT_STABLE
-							| AndroidFullScreen.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-							| AndroidFullScreen.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-							| AndroidFullScreen.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-							| AndroidFullScreen.SYSTEM_UI_FLAG_FULLSCREEN
-							| AndroidFullScreen.SYSTEM_UI_FLAG_IMMERSIVE
-							| AndroidFullScreen.FLAG_LAYOUT_NO_LIMITS
-	                    , successFunction, errorFunction
-	            );
-			}*/
-		}, 0);
+            /*AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_FULLSCREEN
+                    , successFunction, errorFunction
+            );
+            AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    , successFunction, errorFunction
+            );
+		    AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    , successFunction, errorFunction
+            );*/
+			// Extend your app underneath the status bar (Android 4.4+ only)
+		    AndroidFullScreen.showUnderStatusBar();
+
+		    // Extend your app underneath the system UI (Android 4.4+ only)
+		    AndroidFullScreen.showUnderSystemUI();
+		    AndroidFullScreen.immersiveMode();
+		}, 2000);
 		$(".footer-block").click(function(event) {
 			var newBackground = $(this);
 			var newBackgroundId=newBackground.attr('id');
 			if (newBackgroundId!=$("."+oldBackground).attr('id')) {
-				$(".selector").css("left",newBackground.data("percentage")+"%");
+			$(".selector").css("transform","translateX("+newBackground.data("percentage")+"%)");
+				switch(newBackgroundId){
+					case "schedule-bottom":
+						$(".main-screen").addClass("select-schedule").removeClass("select-map select-tracking select-infrared select-settings");
+						if ($(".header").hasClass("show-header")) {
+							$(".header").removeClass('show-header');
+						}
+					break;
+					case "map":
+						$(".main-screen").addClass("select-map").removeClass("select-schedule select-tracking select-infrared select-settings");
+						if ($(".header").hasClass("show-header")) {
+							$(".header").removeClass('show-header');
+						}
+					break;
+					case "tracking":
+						$(".main-screen").addClass("select-tracking").removeClass("select-schedule select-map select-infrared select-settings");
+						if ($(".header").hasClass("show-header")) {
+							$(".header").removeClass('show-header');
+						}
+					break;
+					case "infrared":
+						$(".main-screen").addClass("select-infrared").removeClass("select-schedule select-map select-tracking select-settings");
+						if ($(".header").hasClass("show-header")) {
+							$(".header").removeClass('show-header');
+						}
+					break;
+					case "settings":
+						$(".main-screen").addClass("select-settings").removeClass("select-schedule select-map select-tracking select-infrared ");
+						$(".header").addClass('show-header');
+					break;
+				}
+			}
+			/*if (newBackgroundId!=$("."+oldBackground).attr('id')) {
 				$("."+oldBackground).removeClass('main-background');
 				for (var i = parseInt(newBackground.attr("data-positionButton"))-1; i >= 0; i--) {
 					if ($('#'+backgroundIdList[i]).hasClass('right')) {
@@ -53,12 +83,12 @@ $(document).ready(function(){
 						$('#'+backgroundIdList[i]).removeClass('left');
 					}
 					$('#'+backgroundIdList[i]).addClass('right');
-				} 
-				/*if ($(this).data("position")<$("."+oldBackground).data("position")) {
+				}*
+				if ($(this).data("position")<$("."+oldBackground).data("position")) {
 					$("."+oldBackground).addClass('right');
 				} else {
 					$("."+oldBackground).addClass('left');
-				}*/
+				}
 				if (oldBackground=="main-settings") {
 					$(".main-screen").removeClass('settings');
 					$(".header").removeClass('show-header');
@@ -73,7 +103,7 @@ $(document).ready(function(){
 					$("."+oldBackground).addClass('background-settings');
 					$(".header").addClass('show-header');	
 				}
-			}
+			}*/
 		});
 	});
 });

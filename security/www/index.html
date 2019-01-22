@@ -13,47 +13,47 @@
 		<img src="images/mockup-security.png">
 	</div>-->
 	<div class="container adia flex flex-column">
-		<div class="header">
-			<div class="header-settings">
-				<h1>Intruder Detection Settings</h1>
-			</div>
-		</div>
 		<div class="main-screen">
-			<div id="background-schedule-bottom" data-position="0" class="flex main-schedule left">
+			<div id="background-schedule-bottom" data-position="0" class="flex main-schedule ">
 				<!--<img src="">-->
 			</div>
 			<div id="background-map" data-position="1" class="flex main-map main-background">
-				<img alt="adia-tech-drone-map" src="images/map.png">
+				<img alt="adia-tech-drone-map" src="images/map.jpg">
 			</div>
-			<div id="background-tracking" data-position="2" class="flex main-tracking right">
-				<img alt="adia-tech-drone-tracking-system" src="images/tracking.png">
+			<div id="background-tracking" data-position="2" class="flex main-tracking ">
+				<img alt="adia-tech-drone-tracking-system" src="images/tracking.jpg">
 			</div>
-			<div id="background-infrared" data-position="3" class="flex main-infrared right">
-				<img alt="adia-tech-drone-infrared-system" src="images/infrared.png">
+			<div id="background-infrared" data-position="3" class="flex main-infrared ">
+				<img alt="adia-tech-drone-infrared-system" src="images/infrared.jpg">
 			</div>
-			<div id="background-settings" data-position="4" class="flex main-settings right">
+			<div id="background-settings" data-position="4" class="flex main-settings ">
+				<div class="header">
+					<div class="header-settings">
+						<h1>Intruder Detection Settings</h1>
+					</div>
+				</div>
 				<div class="section-staff flex flex-column">
 					<div class="sections-block staff-name">
-						<h2>Staff</h2>
+						<h2>Authorized Users</h2>
 					</div>
 					<div class="users-block">
 						<div class="settings-block user">
 							<div class="next-to-user flex">
-								<img src="images/thomas-icon.png">
+								<img src="images/male-icon.png">
 							</div>
 							<h2 class="next-to-img">Thomas</h2>
 							<div class="separator"></div>
 						</div>
 						<div class="settings-block user">
 							<div class="next-to-user flex">
-								<img src="images/anna-icon.png">
+								<img src="images/female-icon.png">
 							</div>
 							<h2 class="next-to-img">Anna</h2>
 							<div class="separator"></div>
 						</div>
 						<div class="settings-block user">
 							<div class="next-to-user flex">
-								<img src="images/jessica-icon.png">
+								<img src="images/female-icon.png">
 							</div>
 							<h2 class="next-to-img">Jessica</h2>
 							<div class="separator"></div>
@@ -68,18 +68,27 @@
 				</div>
 				<div class="section-threshold flex flex-column">
 					<div class="sections-block threshold-name">
+						<h2>Behaviour</h2>
+					</div>
+					<div class="settings-block auto">
 						<h2>Detection Threshold</h2>
-					</div>
-					<div class="settings-block auto">
-						<h2>Auto-Aim</h2>
 						<div class="android-button-container flex">
-							<input class="button-check" type="checkbox" id="auto-aim-button">
-							<label for="auto-aim-button" class="android-button-space flex"></label>
+							<input type="text" name="dt-threshold" class="android-text-box" value="0.3">
 						</div>
-							<div class="separator"></div>
+						<div class="separator"></div>
 					</div>
 					<div class="settings-block auto">
-						<h2>Auto-Follow</h2>
+						<h2>Observation Time</h2>
+						<div class="android-button-container flex">
+							<input type="text" name="dt-threshold" class="android-text-box" value="20">
+							<div class="seconds-sign">
+								(s)
+							</div>
+						</div>
+						<div class="separator"></div>
+					</div>
+					<div class="settings-block auto">
+						<h2>Secret Voice Code</h2>
 						<div class="android-button-container flex">
 							<input class="button-check" type="checkbox" id="auto-follow-button">
 							<label for="auto-follow-button" class="android-button-space flex"></label>
@@ -88,15 +97,24 @@
 				</div>
 				<div class="section-behaviour flex flex-column">
 					<div class="sections-block behaviour-name">
-						<h2>Behaviour</h2>
+						<h2>Notifications & Logging</h2>
 					</div>
 					<div class="settings-block observation">
-						<h2>Observation Time</h2>
+						<h2>Notify Admin (always logs)</h2>
 						<div class="android-button-container flex">
 							<input class="button-check" type="checkbox" id="observation-button">
 							<label for="observation-button" class="android-button-space flex"></label>
 						</div>
 						<div class="separator"></div>
+					</div>
+					<div class="settings-block observation">
+						<h2>Timeout for Escalation</h2>
+						<div class="android-button-container flex">
+							<input type="text" name="dt-threshold" class="android-text-box" value="10">
+							<div class="seconds-sign">
+								(s)
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -108,22 +126,22 @@
 					<img src="images/schedule.png">
 				</div>
 			</div>
-			<div id="map" data-percentage="20" class="footer-block flex" data-positionButton="1">
+			<div id="map" data-percentage="100" class="footer-block flex" data-positionButton="1">
 				<div class="footer-block-img flex">
 					<img src="images/map-bottom.png">
 				</div>
 			</div>
-			<div id="tracking" data-percentage="40" class="footer-block flex" data-positionButton="2">
+			<div id="tracking" data-percentage="200" class="footer-block flex" data-positionButton="2">
 				<div class="footer-block-img flex">
 					<img src="images/aperture.png">
 				</div>
 			</div>
-			<div id="infrared" data-percentage="60" class="footer-block flex" data-positionButton="3">
+			<div id="infrared" data-percentage="300" class="footer-block flex" data-positionButton="3">
 				<div class="footer-block-img flex">
 					<img src="images/preview.png">
 				</div>
 			</div>
-			<div id="settings" data-percentage="80" class="footer-block flex" data-positionButton="4">
+			<div id="settings" data-percentage="400" class="footer-block flex" data-positionButton="4">
 				<div class="footer-block-img flex">
 					<img src="images/settings.png">
 				</div>

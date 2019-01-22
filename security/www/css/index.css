@@ -25,9 +25,9 @@
 *{
 	font-family: 'myriadpro-regular', Arial, sans-serif;
 }
-body>div:not(.container){
+/*body>div:not(.container){
 	height: 0% !important;
-}
+}*/
 html,body{
 	width: 100%;
 	height: 100%;
@@ -63,20 +63,18 @@ html,body{
 .header{
 	width: 100%;
 	height: 9.4vh;
-	position: absolute;
 }
 .header h1{
 	margin:0 8%;
 	align-self: center;
 	font-weight: normal;
-	font-size: 4.9vw;
+	font-size: 5.3vw;
 }
 .show-header{
 	display: flex;
 	align-content: center;
 	justify-content: center;
 	align-items: center;
-	left:0;
 }
 .header-settings{
 	display: flex;
@@ -87,21 +85,51 @@ html,body{
 .main-screen{
 	height: 92%;
 	overflow: hidden;
-	flex-wrap: wrap;
 	position: relative;
+	display: flex;
+	width: 500vw;
+	-webkit-transform: translate3d(-20%, 0%, 0%);
+	-moz-transform: translate3d(-20%, 0%, 0%);
+	transform: translate3d(-20%, 0%, 0%);
+    transition: all 200ms ease;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
 }
-.main-map,.main-tracking, .main-infrared, .main-settings{
+.main-schedule, .main-map,.main-tracking, .main-infrared, .main-settings{
 	height: 100%;
-	position: absolute;
-	transition: 100ms transform;
+	/*position: absolute;*/
 	left:0;
 	width: 100vw;
 }
+.select-schedule{
+	-webkit-transform: translate3d(0%, 0%, 0%);
+	-moz-transform: translate3d(0%, 0%, 0%);
+	transform: translate3d(0%, 0%, 0%);
+}
+.select-map{
+	-webkit-transform: translate3d(-20%, 0%, 0%);
+	-moz-transform: translate3d(-20%, 0%, 0%);
+	transform: translate3d(-20%, 0%, 0%);
+}
+.select-tracking{
+	-webkit-transform: translate3d(-40%, 0%, 0%);
+	-moz-transform: translate3d(-40%, 0%, 0%);
+	transform: translate3d(-40%, 0%, 0%);
+}
+.select-infrared{
+	-webkit-transform: translate3d(-60%, 0%, 0%);
+	-moz-transform: translate3d(-60%, 0%, 0%);
+	transform: translate3d(-60%, 0%, 0%);
+}
+.select-settings{
+	-webkit-transform: translate3d(-80%, 0%, 0%);
+	-moz-transform: translate3d(-80%, 0%, 0%);
+	transform: translate3d(-80%, 0%, 0%);
+}
 .main-settings{
-	height: 90%;
+	height: auto;
     display: flex;
     flex-direction: column;
-    margin-top: 20.5%;
 }
 .main-background{
 	display: flex;
@@ -127,16 +155,17 @@ html,body{
 }
 .settings-block h2:not(.next-to-img){
 	margin-left:19%;
+	margin-right:0;
 }
 .sections-block{
-	height: 3.8vh;
+	height: 3.9vh;
 	background: #274969;
 	width: 100%;
 	display: flex;
 	position: relative;
 }
 .settings-block{
-	height: 7.6vh;
+	height: 7.7vh;
 	display: flex;
 	align-self: center;
 	width: 100%;
@@ -174,9 +203,10 @@ html,body{
 }
 .android-button-container{
 	width: 15%;
-	margin:0 10%;
+	margin-right: 10%;
 	position: relative;
 	display: flex;
+	align-items: center;
 }
 .button-check{
 	display: none;
@@ -193,6 +223,8 @@ html,body{
     background: #999;
     border-radius: 60px;
     transition: all 250ms ease;
+    -webkit-backface-visibility: hidden;
+    will-change:transform;
 }
 .android-button-space:before{
 	width: 3.5vh;
@@ -202,8 +234,10 @@ html,body{
 	content: "";
     position: absolute;
     background: #fff;
-    box-shadow: 2px 2px 15px #555;
+    /*box-shadow: 2px 2px 15px #555;*/
     transition: all 300ms ease-in-out;
+    -webkit-backface-visibility: hidden;
+    will-change:transform;
     top:-3%;
  	left:2%;
 }
@@ -223,6 +257,19 @@ html,body{
 .section-behaviour{
 	margin-top: 0.5%;
 }
+.android-text-box{
+	width: 13.5vw;
+    height: 4.6vh;
+    border: 0.1vh solid black;
+    border-radius: 11%;
+    font-size: 5.2vw;
+    text-align: center;
+    margin-right: 15%;
+    color:gray;
+}
+.seconds-sign{
+	font-size: 2.45vh;
+}
 .users-block{
 	height: 100%;
 	flex:1;
@@ -230,14 +277,14 @@ html,body{
 	align-items: flex-start;
 }
 .right{
-	-webkit-transform: translateX(100%);
-	-moz-transform: translateX(100%);
-	transform: translateX(100%);
+	-webkit-transform: translate3d(100%, 0%, 0%);
+	-moz-transform: translate3d(100%, 0%, 0%);
+	transform: translate3d(100%, 0%, 0%);
 }
 .left{
-	-webkit-transform: translateX(-100%);
-	-moz-transform: translateX(-100%);
-	transform: translateX(-100%);
+	-webkit-transform: translate3d(-100%, 0%, 0%);
+	-moz-transform: translate3d(-100%, 0%, 0%);
+	transform: translate3d(-100%, 0%, 0%);
 }
 .footer-bar{
 	width: 100%;
@@ -249,9 +296,13 @@ html,body{
 	width: 20%;
 	height: 100%;
 	position: absolute;
-	left:20%;
-	background: #ffffff66;
-	transition: 0.5s left;
+	-webkit-transform: translate3d(100%, 0%, 0%);
+	-moz-transform: translate3d(100%, 0%, 0%);
+	transform: translate3d(100%, 0%, 0%);
+	background: rgba(255, 255, 255, 0.20);
+	transition: 500ms transform linear;
+	-webkit-backface-visibility: hidden;
+	will-change: transform;
 }
 .footer-block{
 	width: 20%;
