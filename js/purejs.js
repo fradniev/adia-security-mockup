@@ -79,3 +79,16 @@ function removeHeaderClass(header){
 		header.classList.remove('show-header');
 	}
 }
+function keyboardUp(elem){
+	var backSettings=document.getElementById("background-settings");
+	var scrollTopPadding = 1.5;
+	var textAreaTop= document.body.scrollHeight*scrollTopPadding;
+	backSettings.style.height = textAreaTop+"px";
+	elem.scrollIntoView(true);
+	//document.getElementById("main").scrollTo(0, document.body.scrollHeight*scrollTopPadding);
+}
+function keyboardDown(elem){
+	var backSettings=document.getElementById("background-settings");
+	backSettings.style.height = "auto";
+	document.getElementById("main").scrollTo(0, 0);
+}
