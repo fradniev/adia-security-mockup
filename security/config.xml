@@ -16,11 +16,16 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <edit-config file="AndroidManifest.xml" mode="overwrite" target="/manifest/application">
+        <application android:resizeableActivity="false" android:theme="@style/Full" android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity android:resizeableActivity="false" android:theme="@style/Full" android:windowSoftInputMode="adjustPan|adjustResize" />
+    </edit-config>
+    <config-file parent="./application" target="AndroidManifest.xml">
+        <meta-data android:name="android.max_aspect" android:value="5.0" />
+    </config-file>
+    <resource-file src="www/style.xml" target="/manifest/application/res/values/style.xml" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <preference name="AndroidLaunchMode" value="singleInstance" />
-        <preference name="DisallowOverscroll" value="true" />
-        <preference name="KeepRunning" value="true" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -28,9 +33,6 @@
     </platform>
     <plugin name="cordova-plugin-fullscreen" spec="1.2.0" />
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
-    <edit-file parent="/manifest/application" target="AndroidManifest.xml">
-        <meta-data android:name="android.max_aspect" android:value="2.5" />
-        <activity android:resizeableActivity="false" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="adjustPan|adjustResize" />
-    </edit-file>
+    <plugin name="cordova-plugin-statusbar" spec="2.4.2" />
     <engine name="android" spec="^7.1.4" />
 </widget>

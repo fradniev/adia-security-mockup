@@ -13,7 +13,7 @@
 		<img src="images/mockup-security.png">
 	</div>-->
 	<div class="container adia flex flex-column">
-		<div class="main-screen">
+		<div id="main" class="main-screen">
 			<div id="background-schedule-bottom" data-position="0" class="flex main-schedule ">
 				<!--<img src="">-->
 			</div>
@@ -27,7 +27,7 @@
 				<img alt="adia-tech-drone-infrared-system" src="images/infrared.jpg">
 			</div>
 			<div id="background-settings" data-position="4" class="flex main-settings ">
-				<div class="header">
+				<div id="header-id" class="header">
 					<div class="header-settings">
 						<h1>Intruder Detection Settings</h1>
 					</div>
@@ -120,28 +120,28 @@
 			</div>
 		</div>
 		<div class="footer-bar flex">
-			<div class="selector"></div>
-			<div id="schedule-bottom" data-percentage="0" class="footer-block flex" data-positionButton="0">
+			<div id="button-select" class="selector"></div>
+			<div id="schedule-bottom" data-percentage="0" class="footer-block flex" data-positionButton="0" onclick="goToView(this.id)">
 				<div class="footer-block-img flex">
 					<img src="images/schedule.png">
 				</div>
 			</div>
-			<div id="map" data-percentage="100" class="footer-block flex" data-positionButton="1">
+			<div id="map" data-percentage="100" class="footer-block flex" data-positionButton="1" onclick="goToView(this.id)">
 				<div class="footer-block-img flex">
 					<img src="images/map-bottom.png">
 				</div>
 			</div>
-			<div id="tracking" data-percentage="200" class="footer-block flex" data-positionButton="2">
+			<div id="tracking" data-percentage="200" class="footer-block flex" data-positionButton="2" onclick="goToView(this.id)">
 				<div class="footer-block-img flex">
 					<img src="images/aperture.png">
 				</div>
 			</div>
-			<div id="infrared" data-percentage="300" class="footer-block flex" data-positionButton="3">
+			<div id="infrared" data-percentage="300" class="footer-block flex" data-positionButton="3" onclick="goToView(this.id)">
 				<div class="footer-block-img flex">
 					<img src="images/preview.png">
 				</div>
 			</div>
-			<div id="settings" data-percentage="400" class="footer-block flex" data-positionButton="4">
+			<div id="settings" data-percentage="400" class="footer-block flex" data-positionButton="4" onclick="goToView(this.id)">
 				<div class="footer-block-img flex">
 					<img src="images/settings.png">
 				</div>
@@ -150,7 +150,7 @@
 		<!-- Fradniev Gonzalez -->
 	</div>
 	<script type="text/javascript" src="cordova.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<!--<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>-->
 	<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

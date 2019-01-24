@@ -17,14 +17,13 @@ function trace(value)
     console.log(value);
 }
 document.addEventListener('deviceready', function () {
-	//setTimeout(function(){
+	setTimeout(function(){
 		// Extend your app underneath the status bar (Android 4.4+ only)
 	    AndroidFullScreen.showUnderStatusBar();
 	    // Extend your app underneath the system UI (Android 4.4+ only)
 	    AndroidFullScreen.showUnderSystemUI();
 	    AndroidFullScreen.immersiveMode();
-	    //AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_FULLSCREEN | AndroidFullScreen.SYSTEM_UI_FLAG_LOW_PROFILE, successFunction, errorFunction);
-	//}, 2000);
+	}, 2000);
 });
 function goToView(id){
 	var newBackground = document.getElementById(id);
