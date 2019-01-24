@@ -212,7 +212,7 @@ html,body{
 	display: none;
 }
 .android-button-space{
-	width: 6.24vh;
+	width: 13.5vw;
     height: 3.42vh;
 	background: gray;
 	position: relative;
@@ -234,18 +234,18 @@ html,body{
 	content: "";
     position: absolute;
     background: #fff;
-    /*box-shadow: 2px 2px 15px #555;*/
+    box-shadow: 2px 2px 15px #555;
     transition: all 300ms ease-in-out;
     -webkit-backface-visibility: hidden;
     will-change:transform;
     top:-3%;
- 	left:2%;
+ 	left:-2%;
 }
 .button-check:checked + label{
 	background:#96b9f1;
 }
 .button-check:checked + label:before{
-	left:45%;
+	left:65%;
 }
 .section-staff, .section-threshold, .section-behaviour{
 	width: 100%;

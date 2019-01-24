@@ -1,4 +1,5 @@
-
-<style name="Full">
-    <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
-</style>
+<resources>
+	<style name="Full">
+	    <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+	</style>
+</resources>
