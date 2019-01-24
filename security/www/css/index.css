@@ -68,7 +68,7 @@ html,body{
 	margin:0 8%;
 	align-self: center;
 	font-weight: normal;
-	font-size: 5.3vw;
+	font-size: 2.48vh;
 }
 .show-header{
 	display: flex;
@@ -144,12 +144,12 @@ html,body{
 .main-settings h2{
 	margin:0 8.3%;
 	align-self: center;
-	font-size: 4.3vw;
+	font-size: 2vh;
     color: white;
     font-weight: normal;
 }
 .settings-block h2{
-	font-size: 4.9vw;
+	font-size: 2.3vh;
     color: black;
     font-weight: normal;
 }
@@ -262,10 +262,11 @@ html,body{
     height: 4.6vh;
     border: 0.1vh solid black;
     border-radius: 11%;
-    font-size: 5.2vw;
+    font-size: 2.3vh;
     text-align: center;
     margin-right: 15%;
     color:gray;
+    max-width: 11.567vw;
 }
 .seconds-sign{
 	font-size: 2.45vh;
@@ -315,4 +316,14 @@ html,body{
 .footer-block img{
 	position: relative;
 	left:3%;
+}
+
+@media screen and (orientation:landscape) { 
+	.footer-block img{
+		object-fit: contain;
+	}
+	.next-to-user img{
+		object-fit: contain;
+		    height: 100%;
+	}
 }

@@ -16,14 +16,16 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <edit-config file="AndroidManifest.xml" mode="overwrite" target="/manifest/application">
-        <application android:resizeableActivity="false" android:theme="@style/Full" android:windowSoftInputMode="adjustPan|adjustResize" />
+    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+        <application android:resizeableActivity="false" android:windowSoftInputMode="adjustPan|adjustResize" />
+    </edit-config>
+    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
         <activity android:resizeableActivity="false" android:theme="@style/Full" android:windowSoftInputMode="adjustPan|adjustResize" />
     </edit-config>
     <config-file parent="./application" target="AndroidManifest.xml">
         <meta-data android:name="android.max_aspect" android:value="5.0" />
     </config-file>
-    <resource-file src="www/style.xml" target="/manifest/application/res/values/style.xml" />
+    <resource-file src="www/styles.xml" target="res/values/styles.xml" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
