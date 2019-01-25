@@ -21,6 +21,8 @@ document.addEventListener('deviceready', function () {
 	AndroidFullScreen.showUnderSystemUI();
 	AndroidFullScreen.immersiveMode();
 });
+window.addEventListener('native.keyboardshow', keyboardUp);
+window.addEventListener('native.keyboardhide', keyboardDown);
 function goToView(id){
 	var newBackground = document.getElementById(id);
 	var main = document.getElementById("main");
@@ -68,9 +70,11 @@ function removeHeaderClass(header){
 }
 function keyboardUp(elem){
 	var backSettings=document.getElementById("background-settings");
-	var scrollTopPadding = 1.5;
-	var textAreaTop= document.body.scrollHeight*scrollTopPadding;
+	var textAreaTop= document.body.scrollHeight+elem.keyboardHeight;
 	backSettings.style.height = textAreaTop+"px";
+	//document.getElementById("main").scrollTo(0, document.body.scrollHeight*scrollTopPadding);
+}
+function focusThis(elem){
 	elem.scrollIntoView(true);
 	//document.getElementById("main").scrollTo(0, document.body.scrollHeight*scrollTopPadding);
 }

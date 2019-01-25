@@ -20,10 +20,10 @@
         <allow-intent href="market:*" />
         <resource-file src="www/styles.xml" target="app/src/main/res/values-v28/styles.xml" />
         <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
-            <application android:resizeableActivity="false" android:windowSoftInputMode="adjustPan|adjustResize" />
+            <application android:resizeableActivity="false" />
         </edit-config>
         <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
-            <activity android:resizeableActivity="false" android:theme="@style/Full" android:windowSoftInputMode="adjustPan|adjustResize" />
+            <activity android:theme="@style/Full" />
         </edit-config>
         <config-file parent="./application" target="AndroidManifest.xml">
             <meta-data android:name="android.max_aspect" android:value="5.0" />
@@ -33,8 +33,10 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <preference name="KeyboardResize" value="true" />
     <plugin name="cordova-plugin-fullscreen" spec="1.2.0" />
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-statusbar" spec="2.4.2" />
+    <plugin name="cordova-plugin-ionic-keyboard" spec="2.1.3" />
     <engine name="android" spec="^7.1.4" />
 </widget>
