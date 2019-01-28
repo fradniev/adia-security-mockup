@@ -72,11 +72,11 @@ function keyboardUp(elem){
 	var backSettings=document.getElementById("background-settings");
 	var textAreaTop= document.body.scrollHeight+elem.keyboardHeight;
 	backSettings.style.height = textAreaTop+"px";
-	//document.getElementById("main").scrollTo(0, document.body.scrollHeight*scrollTopPadding);
 }
 function focusThis(elem){
-	elem.scrollIntoView(true);
-	//document.getElementById("main").scrollTo(0, document.body.scrollHeight*scrollTopPadding);
+	setTimeout(function(){
+		elem.scrollIntoView(true);
+	},300);
 }
 function keyboardDown(elem){
 	var backSettings=document.getElementById("background-settings");
