@@ -20,6 +20,8 @@ document.addEventListener('deviceready', function () {
 	AndroidFullScreen.showUnderStatusBar();
 	AndroidFullScreen.showUnderSystemUI();
 	AndroidFullScreen.immersiveMode();
+	//console.log(AndroidFullScreen.getDisplayCutout());
+	console.log(AndroidFullScreen.immersiveHeight());
 });
 window.addEventListener('native.keyboardshow', keyboardUp);
 window.addEventListener('native.keyboardhide', keyboardDown);

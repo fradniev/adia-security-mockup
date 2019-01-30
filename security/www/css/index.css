@@ -297,6 +297,8 @@ html,body{
 	background: #274969;
 	position: relative;
 	padding-bottom: 20px;/* HERE */
+	padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
 }
 .selector{
 	width: 20%;
